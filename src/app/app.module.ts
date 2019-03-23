@@ -1,20 +1,14 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
 import { LoginComponent } from './login/login.component';
 import { RouterModule } from '@angular/router';
-import { EnrollComponent } from './enroll/enroll.component';
-import { TodaybdayComponent } from './todaybday/todaybday.component';
-import { ComposeGreetComponent } from './compose-greet/compose-greet.component';
-import { ConfigComponent } from './config/config.component';
-import { NavbarComponent } from './navbar/navbar.component';
-import { DatePickerComponent } from './comp/date-picker/date-picker.component';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth'
+import { BdayModule } from './bday/bday.module';
+import { NotfoundComponent } from './notfound/notfound.component';
 
 var fireBase_Config = {
   apiKey: "AIzaSyBpBy5C2vd5ToB6dCqj1kcAEtKnRaR6Zzg",
@@ -28,23 +22,19 @@ var fireBase_Config = {
 @NgModule({
   declarations: [
     AppComponent,
-    DashboardComponent,
-
     LoginComponent,
-    EnrollComponent,
-    TodaybdayComponent,
-    ComposeGreetComponent,
-    ConfigComponent,
-    NavbarComponent,
-    DatePickerComponent
+    NotfoundComponent,
   ],
   imports: [
-    BrowserModule, RouterModule, FormsModule, ReactiveFormsModule,
+    BrowserModule,
+    RouterModule,
+    BdayModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
     AngularFireModule.initializeApp(fireBase_Config),
     AngularFireAuthModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,44 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { DashboardComponent } from './dashboard/dashboard.component';
 import { LoginComponent } from './login/login.component';
-import { TodaybdayComponent } from './todaybday/todaybday.component';
-import { EnrollComponent } from './enroll/enroll.component';
-import { ConfigComponent } from './config/config.component';
-import { ComposeGreetComponent } from './compose-greet/compose-greet.component';
-
+import { NotfoundComponent } from './notfound/notfound.component';
 const routes: Routes = [
-  {
-    path:'',
-    redirectTo:'login',
-    pathMatch:"full"
-  }
-  ,
-  {
-    path:'login',
-    component:LoginComponent,
-    pathMatch:'full'
-  },
-  {
-    path:'dashboard',
-    component:DashboardComponent
-  },
-  {
-    path:'enroll',
-    component:EnrollComponent
-  },
-  {
-    path:'today',
-    component:TodaybdayComponent
-  },
-  {
-    path:'compose',
-    component:ComposeGreetComponent
-  },
-  {
-    path:'config',
-    component:ConfigComponent
-  }
+  { path: '', redirectTo: 'dashboard', pathMatch: "full" },
+  { path: 'login', component: LoginComponent, pathMatch: 'full' },
+  { path: '**', component: NotfoundComponent }
 ];
 
 @NgModule({

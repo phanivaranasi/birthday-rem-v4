@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthUserService } from '../services/auth-user.service';
+
 import { User } from 'firebase';
+import { AuthUserService } from 'src/app/services/auth-user.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -9,7 +11,7 @@ import { User } from 'firebase';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor(private authService: AuthUserService) { }
+  constructor(private authService: AuthUserService, private router: Router) { }
   user: User;
   ngOnInit() {
     this.user = JSON.parse(localStorage.getItem("user"));
@@ -17,6 +19,8 @@ export class NavbarComponent implements OnInit {
   }
 
   logout = (e) => {
-    this.authService.logout();
+    this.authService.logout().then(res => {
+      this.router.navigate(["login"]);
+    })
   }
 }
