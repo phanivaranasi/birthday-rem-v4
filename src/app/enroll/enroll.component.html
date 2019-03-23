@@ -1,0 +1,58 @@
+<div class="ui two column grid container">
+  <div class="column">
+    {{enroll|json}}
+    <form autocomplete="off" #f="ngForm" novalidate>
+      <div class="ui small form">
+        <div class="two fields">
+          <div class="field">
+            <label>First Name</label>
+            <input required name="firstname" [(ngModel)]="enroll.FirstName" type="text" />
+          </div>
+          <div class="field">
+            <label>Last Name</label>
+            <input  name="lastname" [(ngModel)]="enroll.LastName" type="text" />
+          </div>
+        </div>
+        <div class="two fields">
+          <div class="field">
+            <label>Middle Name</label>
+            <input required name="middle" [(ngModel)]="enroll.MiddleName" type="text" />
+          </div>
+          <div class="field">
+            <label>Alias Name</label>
+            <input name="aliasName" [(ngModel)]="enroll.Alias" type="text" />
+          </div>
+        </div>
+        <div class="two fields">
+          <div class="field">
+            <label>Date of Birth</label>
+            <input name="dob" [(ngModel)]="enroll.DOB" type="text">
+          </div>
+        </div>
+        <div class="two fields">
+          <div class="field">
+            <label>Mobie #</label>
+            <input name="mobile" maxlength="10" [(ngModel)]="enroll.Mobile" type="text" />
+          </div>
+          <div class="field">
+            <label>Email</label>
+            <input required name="email" [(ngModel)]="enroll.Email" type="email" />
+          </div>
+        </div>
+        <div class="two field">
+          <div class="field">
+            <button [disabled]="f.form.pristine || f.form.invalid" class="ui button positive"><i class="fa fa-fw fa-save"></i>Create</button>
+            <button class="ui button negative"><i class="fa fa-fw fa-broom"></i>Cancel</button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="column">
+    <div class="ui card">
+        <img id="imgAvatar" class="ui medium circular image" src="https://semantic-ui.com/images/wireframe/square-image.png">
+        <span class="btn-avatar"><button class="ui button small">Change Avatar</button></span>
+    </div>
+
+  </div>
+</div>

@@ -1,8 +1,11 @@
-<div>
-
-  <form (submit)="authUser()">
-    <input name="username" type="text" placeholder="User name" [(ngModel)]="user.email" />
-    <input name="pwd" type="text" placeholder="Password" [(ngModel)]="user.password" />
-    <button  type="submit">Sign In</button>
-  </form>
-</div>
+<form #f="ngForm" autocomplete="off" (submit)="authUser()" novalidate>
+  <input name="username" [(ngModel)]="_user.Email" type="text" placeholder="Username">
+  <input name="pwd" [(ngModel)]="_user.Password" type="password" placeholder="Password">
+  <button type="submit" class="ui button positive">Sign In</button>
+</form>
+<button type="button" (click)="fbAuth($event)" class="ui primary basic button"><i
+    class="fab fa-facebook-square"></i>&nbsp;Facebook</button>
+<button type="button" (click)="githubAuth($event)" class="ui primary basic button"><i class="fab fa-github">&nbsp;
+    Github</i></button>
+<button type="button" (click)="gAuth($event)" class="ui primary basic button"><i
+    class="fab fa-google "></i>Google</button>
