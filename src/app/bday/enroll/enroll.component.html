@@ -41,7 +41,7 @@
         </div>
         <div class="two field">
           <div class="field">
-            <button [disabled]="f.form.pristine || f.form.invalid" class="ui button positive"><i class="fa fa-fw fa-save"></i>Create</button>
+            <button (click)="saveBuddy()" [disabled]="f.form.pristine || f.form.invalid" class="ui button positive"><i class="fa fa-fw fa-save"></i>Create</button>
             <button class="ui button negative"><i class="fa fa-fw fa-broom"></i>Cancel</button>
           </div>
         </div>

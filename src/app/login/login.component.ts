@@ -29,15 +29,25 @@ export class LoginComponent implements OnInit {
   }
   fbAuth = (e) => {
     console.log("fb");
-    this.providerAuth(this.fbProvider);
+    this.providerAuth(this.fbProvider).then(res=>{
+      this.router.navigate(["dashboard"]);
+    },err=>{
+
+    })
   }
   githubAuth = (e) => {
-    this.providerAuth(this.gitProvider);
+    this.providerAuth(this.gitProvider).then(res=>{
+      console.log(res);
+      this.router.navigate(["dashboard"]);
+    },err=>{
+
+    })
   }
   gAuth = (e) => {
     console.log("gp");
     this.providerAuth(this.gProvider).then(res => {
-      console.log('err');
+      console.log(res);
+      this.router.navigate(["dashboard"]);
     })
       .catch(err => {
         console.log(err);

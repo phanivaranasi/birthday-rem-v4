@@ -7,8 +7,11 @@ import { LoginComponent } from './login/login.component';
 import { RouterModule } from '@angular/router';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth'
+import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { BdayModule } from './bday/bday.module';
 import { NotfoundComponent } from './notfound/notfound.component';
+import { BdayService } from './bday/services/bday';
+import { AngularFirestore } from '@angular/fire/firestore';
 
 var fireBase_Config = {
   apiKey: "AIzaSyBpBy5C2vd5ToB6dCqj1kcAEtKnRaR6Zzg",
@@ -33,10 +36,11 @@ var fireBase_Config = {
     FormsModule,
     ReactiveFormsModule,
     AngularFireModule.initializeApp(fireBase_Config),
-    AngularFireAuthModule
-    
+    AngularFireAuthModule,
+    AngularFireDatabaseModule
+
   ],
-  providers: [],
+  providers: [AngularFirestore],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

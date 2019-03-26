@@ -11,6 +11,7 @@ import { bdayRoutes } from './bday.routing';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { NavbarComponent } from './navbar/navbar.component';
 import { AuthGuradService } from '../guards/auth-gurad.service';
+import { BdayService } from './services/bday';
 
 @NgModule({
   declarations: [
